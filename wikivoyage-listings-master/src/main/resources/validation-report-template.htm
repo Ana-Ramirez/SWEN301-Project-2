@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app="validationReportApp">
+    <head>
+        <meta charset="utf-8">
+        <link
+                rel="stylesheet"
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+                integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+                crossorigin="anonymous"
+        >
+        <link
+                rel="stylesheet"
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+                integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+                crossorigin="anonymous"
+        >
+        <script
+                src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+                integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+                crossorigin="anonymous"
+        ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script>
+            angular.module('validationReportApp', [])
+                .controller('ValidationReportController', function() {
+                    this.issues = [
+                        {rows}
+                    ];
+
+                    this.issueTypes = [];
+
+                    for (var i = 0; i < this.issues.length; i++) {
+                        var issueType = this.issues[i].issueType;
+                        if (this.issueTypes.indexOf(issueType) == -1) {
+                            this.issueTypes.push(issueType);
+                        }
+                    }
+
+                    this.issueTypeFilter = {};
+
+                    for (var i = 0; i < this.issueTypes.length; i++) {
+                        this.issueTypeFilter[this.issueTypes[i]] = true;
+                    }
+
+                    // Shuffle array, code taken from
+                    // http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+                    function shuffleArray(array) {
+                        for (var i = array.length - 1; i > 0; i--) {
+                            var j = Math.floor(Math.random() * (i + 1));
+                            var temp = array[i];
+                            array[i] = array[j];
+                            array[j] = temp;
+                        }
+                        return array;
+                    }
+
+                    this.shuffleIssues = function() {
+                        issuesByArticle = {};
+                        for (var i = 0; i < this.issues.length; i++) {
+                            var issue = this.issues[i];
+                            if (!(issue.article in issuesByArticle)) {
+                                issuesByArticle[issue.article] = [];
+                            }
+                            issuesByArticle[issue.article].push(issue);
+                        }
+                        var articleNames = Object.keys(issuesByArticle);
+                        shuffleArray(articleNames);
+                        this.issues = [];
+
+                        for (var i = 0; i < articleNames.length; i++) {
+                            var articleName = articleNames[i];
+                            for (var j = 0; j < issuesByArticle[articleName].length; j++) {
+                                this.issues.push(issuesByArticle[articleName][j]);
+                            }
+                        }
+                    };
+
+                    this.issueUrl = function(issue) {
+                        return (
+                            'https://' + issue.language + '.wikivoyage.org/wiki/' +
+                            encodeURIComponent(issue.article.replace(/ /g,"_"))
+                        );
+                    }
+
+                    self = this
+                    this.filterType = function(issue) {
+                        return self.issueTypeFilter[issue.issueType];
+                    }
+
+                    this.shuffleIssues();
+                })
+        </script>
+        <title>Wikivoyage validation report</title>
+    </head>
+    <body>
+    <div class="container-fluid" ng-controller="ValidationReportController as validationReport">
+        <div style="padding-bottom: 20px;">
+            Total issues: {{validationReport.issues.length}} |
+            <label class="checkbox-inline" ng-repeat="issueType in validationReport.issueTypes">
+                <input type="checkbox" ng-model="validationReport.issueTypeFilter[issueType]"> {{issueType}}
+            </label> |
+            <button ng-click="validationReport.shuffleIssues()">Shuffle issues</button> |
+            Generated from {dumpDate} Wikivoyage data
+        </div>
+        <table class="table">
+            <tr><th>Article</th><th>Listing</th><th>Issue</th></tr>
+            <tr ng-repeat="issue in validationReport.issues | filter:validationReport.filterType">
+                <td><a href="{{validationReport.issueUrl(issue)}}">{{issue.article}}</a></td>
+                <td>{{issue.listing}}</td>
+                <td>{{issue.issue}}</td>
+            </tr>
+        </table>
+    </div>
+    </body>
+</html>
