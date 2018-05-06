@@ -1,5 +1,0 @@
-{{listing
-| type=do
-| name=Do something
-| description=Description with some {{unknown|template}} and another {{unknown|name=template}}
-}}
