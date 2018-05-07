@@ -24,6 +24,7 @@ public class Main extends Application {
     private GameView gameView;
 
     public static void main(String[] args) {
+    	System.out.println("ANA RAMIREZ RUNNING THIS PROGRAM");
         launch(args);
     }
 
