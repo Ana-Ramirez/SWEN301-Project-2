@@ -34,3 +34,13 @@
 ### MONDAY 7 MAY 
 3 - 5:15pm: Read a few of the achitecture essays recommended to us on http://aosabook.org.  
 10 - 3am: Worked on essay. Have a decent copy of the history written, will need editing later but is good enough for now.
+
+
+### TUESDAY 8 MAY
+2 - 6pm: Worked on domain part of the essay  
+9pm - 2am: Tried to get a UML diagram generator working on Eclipse. Ended up not working at all (no idea why, tried at least 2 different plugins), eventually ended up importing all the code into IntelliJ, generating the diagrams here, then going back to Eclipse. Finished working on domain part of the essay. Started Architecture part of the essay. Forgot to push (hence this being pushed late)
+
+
+### WEDNESDAY 9 MAY
+2:15 - 5pm: Architecture part of essay and lots of research about architecture and reading code. Had to stop for CYBR171 test
+11pm - 2:20am: Finished architecture part of essay. Pushing now (eventually).
