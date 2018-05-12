@@ -131,13 +131,15 @@ public class Game {
 
     }
 
-    public void setPlayerOneName(String playerOne) {
-        players[0].setName(playerOne);
+    public void setPlayerOneName(String name) {
+        players[0].setName(name);
+    }
+    
+    public void setPlayerTwoName(String name) {
+        players[1].setName(name);
     }
 
-    public void setPlayerTwoName(String playerTwo) {
-        players[1].setName(playerTwo);
-    }
+    
 
     public List<Pair<Integer, Integer>> validMoves() {
         return board.validMoves(getCurrentPlayer().getColor());
