@@ -60,4 +60,4 @@ After 9pm: Something in my personal life came up - decided to take the 5% late p
 
 
 ### SUNDAY 13 MAY
-6pm - 11pm: Writing architecture evaluation report and adding finishing touches
+6pm - 11:45pm: Writing architecture evaluation report and adding finishing touches
