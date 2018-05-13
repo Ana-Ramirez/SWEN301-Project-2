@@ -1,7 +1,6 @@
 package View;
 
 import Controller.GameViewController;
-import go.Model.Game;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 

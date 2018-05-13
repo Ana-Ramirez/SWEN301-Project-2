@@ -3,7 +3,6 @@ package View;
 import Controller.GameViewController;
 import View.BoardView;
 import View.SidePanel;
-import go.Model.Game;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 

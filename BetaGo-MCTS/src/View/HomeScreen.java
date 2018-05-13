@@ -3,7 +3,6 @@ package View;
 import Controller.GameViewController;
 import View.HumanVsComputerScreen;
 import View.HumanVsHumanScreen;
-import go.Model.Game;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;

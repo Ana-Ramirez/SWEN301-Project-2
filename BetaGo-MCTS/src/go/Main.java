@@ -1,21 +1,9 @@
 package go;
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.scene.*;
-import javafx.scene.canvas.*;
-import javafx.scene.control.*;
-import javafx.scene.image.*;
-import javafx.scene.layout.*;
-import javafx.scene.paint.*;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import go.Model.*;
-import go.Model.Utility.Pair;
 import Controller.GameViewController;
 import View.HomeScreen;
-import javafx.util.StringConverter;
 
 public class Main extends Application {
 
@@ -25,7 +13,6 @@ public class Main extends Application {
     public GameViewController gameViewController;
     public HomeScreen homeScreen;
     
-
     public static void main(String[] args) {
     	System.out.println("ANA RAMIREZ RUNNING THIS PROGRAM");
         launch(args);
@@ -44,5 +31,4 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
     }
-
 }

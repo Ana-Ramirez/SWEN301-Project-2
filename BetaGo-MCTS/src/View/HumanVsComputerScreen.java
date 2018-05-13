@@ -3,7 +3,6 @@ package View;
 import Controller.GameViewController;
 import View.BoardSizeButtons;
 import go.Main;
-import go.Model.Game;
 import View.PlayAndBackButtons;
 import javafx.beans.value.ChangeListener;
 import javafx.scene.control.Button;

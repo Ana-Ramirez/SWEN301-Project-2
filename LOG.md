@@ -49,9 +49,15 @@
 ### THURSDAY 10 MAY
 3:30 - 7pm: Working on and finishing data structures part of essay
 
+
 ### FRIDAY 11 MAY
 2 - 9pm: Working on redesigning/re-architectur-ing the code.
 After 9pm: Something in my personal life came up - decided to take the 5% late pentalty
 
+
 ### SATURDAY 12 MAY
 5 - 11:50pm: Prior to 5pm I was with my team doing ENGR301. Finished code architecture 10 minutes before another 5% pentalty would be applied, leaving me 10 minutes to write a 4 page report. Awesome. Taking another 5% penalty unfortunately...
+
+
+### SUNDAY 13 MAY
+6pm - 11pm: Writing architecture evaluation report and adding finishing touches

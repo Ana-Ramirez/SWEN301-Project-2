@@ -2,7 +2,6 @@ package View;
 
 import Controller.GameViewController;
 import go.Main;
-import go.Model.Game;
 import go.Model.Point;
 import go.Model.Utility.Pair;
 import javafx.scene.canvas.Canvas;

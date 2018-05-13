@@ -7,7 +7,6 @@ import go.Model.Game;
 import go.Model.Point;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -117,7 +116,6 @@ public class GameViewController extends StackPane {
     }
 
     public void displayGameOverPopUp(Label scoreLabel, Stage dialog) {
-    	//gameViewController.displayGameOverPopUp(scoreLabel, dialog);
     	
         String winner = game.getPlayers()[0].getScore() > game.getPlayers()[1].getScore()
                         ? game.getPlayers()[0].getName() : game.getPlayers()[1].getName();
@@ -137,7 +135,5 @@ public class GameViewController extends StackPane {
 	public void setPlayerTwoName(String name) {
 		game.setPlayerTwoName(name);
 	}
-
-
 	
 }
